@@ -17,7 +17,7 @@ plfaData <- loadByProduct(site = "HARV",
 saveRDS(plfaData, "./raw_data/NEON_plfa_HARV.rds")
 
 # To save a file explaining the variables included:
-write_csv(plfaData$variables_10104, "./NEON_PLFA_variable_key.csv")
+write_csv(plfaData$variables_10104, "./reference_data/NEON_PLFA_variable_key.csv")
 
 ```
 ## About
