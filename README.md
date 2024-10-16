@@ -16,6 +16,9 @@ plfaData <- loadByProduct(site = "HARV",
 # Save data files as an RDS object for easy loading back into R
 saveRDS(plfaData, "./raw_data/NEON_plfa_HARV.rds")
 
+# To save a file explaining the variables included:
+write_csv(plfaData$variables_10104, "./NEON_PLFA_variable_key.csv")
+
 ```
 ## About
 # How are PLFAs converted to biomass?
