@@ -1,11 +1,13 @@
 library(tidyverse)
-# setwd("/projectnb/talbot-lab-data/zrwerbin/SoilBiomassNEON")
 
-# Read in the PLFA data and keys
-plfaData <- readRDS("./raw_data/NEON_plfa.rds")
+# Read in the PLFA data and keys from Github repository
+plfaData <- readRDS(url("https://github.com/zoey-rw/SoilBiomassNEON/raw/refs/heads/main/raw_data/NEON_plfa.rds"))
 
+plfa_var_key = read_csv(url("https://raw.githubusercontent.com/zoey-rw/SoilBiomassNEON/refs/heads/main/reference_data/PLFA_to_biomass_key.csv"))
 
-plfa_var_key = read_csv("./reference_data/neon_PLFA_key.csv")
+# Or local files
+#plfaData <- readRDS("./raw_data/NEON_plfa.rds")
+#plfa_var_key = read_csv("./reference_data/NEON_PLFA_variable_key.csv")
 
 # Select variables for important PLFA markers, as well as sample identifiers and quality flags
 variables_to_keep = plfa_var_key$neonVariable %>% unique() %>% 

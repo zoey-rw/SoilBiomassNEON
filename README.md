@@ -24,8 +24,17 @@ write_csv(plfaData$variables_10104, "./reference_data/NEON_PLFA_variable_key.csv
 # How are PLFAs converted to biomass?
 Phospholipid fatty acids (PLFAs) are found in many types of organisms, but specific PLFAs found in bacteria and multicellular organisms can be used to identify certain lineages. Most PLFAs are not perfectly unique to one lineage, but trends in certain PLFAs can be used as biomarkers for biomass of bacteria, fungi, and overall microbial biomass. 
 
-This code in this repository sums the abundance of PLFAs that are well-established biomarkers of lineages. To use your own classifications, add a row to the file called PLFA_key.csv.
+This code in this repository sums the abundance of PLFAs that are well-established biomarkers of lineages (Lewe et al. 2021, Quideau et al. 2016, Olsson et al 1995). To use your own classifications, add a row to the file called PLFA_to_biomass_key.csv.
 
+If you notice an error or would recommend a change to the PLFA/biomass classifications, please create an issue or pull request with suggestions! 
+
+# References 
+
+Lewe, Natascha, et al. "Phospholipid fatty acid (PLFA) analysis as a tool to estimate absolute abundances from compositional 16S rRNA bacterial metabarcoding data." Journal of Microbiological Methods 188 (2021): 106271.
+
+Olsson, Pål Axel, et al. "The use of phospholipid and neutral lipid fatty acids to estimate biomass of arbuscular mycorrhizal fungi in soil." Mycological Research 99.5 (1995): 623-629.
+
+Quideau, Sylvie A., et al. "Extraction and analysis of microbial phospholipid fatty acids in soils." JoVE (Journal of Visualized Experiments) 114 (2016): e54360.
 
 # Credits & Acknowledgements
 
