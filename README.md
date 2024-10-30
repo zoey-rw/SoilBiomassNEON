@@ -18,8 +18,12 @@ saveRDS(plfaData, "./raw_data/NEON_plfa_HARV.rds")
 
 # To save a file explaining the variables included:
 write_csv(plfaData$variables_10104, "./reference_data/NEON_PLFA_variable_key.csv")
-
 ```
+Then, run the `estimateMicrobialBiomass.r` script, which will overwrite the `NEON_microbial_biomass_PLFA.rds` output file in this repository.
+
+![Example plot](https://github.com/zoey-rw/SoilBiomassNEON/blob/main/fungi_plot.png?raw=true)
+This is an example of the one output metrics: the proportion of fungal biomass in soils across NEON infrastructure (sites here are organized by latitude).
+
 ## About
 # How are PLFAs converted to biomass?
 Phospholipid fatty acids (PLFAs) are found in many types of organisms, but specific PLFAs found in bacteria and multicellular organisms can be used to identify certain lineages. Most PLFAs are not perfectly unique to one lineage, but trends in certain PLFAs can be used as biomarkers for biomass of bacteria, fungi, and overall microbial biomass. 
