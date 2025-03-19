@@ -10,15 +10,19 @@ plfa_var_key = read_csv(url("https://raw.githubusercontent.com/zoey-rw/SoilBioma
 #plfa_var_key = read_csv("./reference_data/NEON_PLFA_variable_key.csv")
 
 # Select variables for important PLFA markers, as well as sample identifiers and quality flags
-variables_to_keep = plfa_var_key$neonVariable %>% unique() %>% na.omit %>% 
-    c("biomassID", "siteID","dataQF","analysisResultsQF","domainID","decimalLatitude","decimalLongitude",
-      "cis18To1n9ScaledConcentration","c20To5n3ScaledConcentration","c16To1n7ScaledConcentration")
+variables_to_keep = plfa_var_key$neonVariable %>% 
+    unique() %>% 
+    na.omit %>% 
+    c("biomassID", "siteID","dataQF","analysisResultsQF","domainID",
+      "decimalLatitude","decimalLongitude",
+      "cis18To1n9ScaledConcentration",
+      "c20To5n3ScaledConcentration","c16To1n7ScaledConcentration")
 
 # Subset the dataframe to columns of interest
 # Using data that has been "scaled" to an internal standard 
 plfa_scaled = plfaData$sme_scaledMicrobialBiomass %>% 
     filter(analysisResultsQF == "OK") %>% 
-    select(all_of(variables_to_keep))
+    select(all_of(variables_to_keep)) 
 
 
 gram_positive_bac = plfa_var_key %>% 
@@ -40,7 +44,7 @@ sap_ecto_fungi = plfa_var_key %>%
 fungi_minus_amf = plfa_var_key %>% 
     filter(grepl("fungi|Fungi", paste(targetSubGroup, targetGroup, targetGroupBroad))) %>% 
     select(neonVariable) %>% unlist
-    
+
 # Includes many organisms, not just microbes
 total_biomass = "totalLipidScaledConcentration"
 
